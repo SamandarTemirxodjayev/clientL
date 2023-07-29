@@ -7,7 +7,7 @@
   let loading = true;
   
   onMount(async () => {
-    const res = await axios.get("https://139.84.171.101/api/answers");
+    const res = await axios.get("http://139.84.171.101/api/answers");
     users = res.data
     loading = false;
   });
