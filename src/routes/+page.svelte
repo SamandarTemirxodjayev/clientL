@@ -3,10 +3,6 @@ import { onMount } from 'svelte';
 import Loader from '../components/Loader.svelte';
 let loading = true;
 onMount(async () => {
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-  await sleep(500);
   const token = localStorage.getItem('token');
   if (!token) {
     window.location.href = '/login';
