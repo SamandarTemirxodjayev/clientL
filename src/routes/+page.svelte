@@ -6,7 +6,7 @@ onMount(async () => {
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
-  await sleep(3000);
+  await sleep(500);
   const token = localStorage.getItem('token');
   if (!token) {
     window.location.href = '/login';
