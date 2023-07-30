@@ -54,7 +54,7 @@
   <div class="p-4 sm:ml-64 flex items-center justify-center max-w-full">
     <form class="w-[50%]" on:submit={handleSubmit}>
       <div class="mb-4">
-        <label for="gender" class="block mb-2 text-sm font-medium text-gray-900">Foydalanchini tanlang</label>
+        <label for="gender" class="block mb-2 text-sm font-medium text-gray-900">Foydalanuvchini tanlang</label>
         <input bind:value={id} type="text" id="browser" list="users" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 outline-blue-500" required />
         <datalist id="users">
           {#each users as user}

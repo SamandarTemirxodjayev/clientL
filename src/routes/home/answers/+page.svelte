@@ -12,16 +12,25 @@
     loading = false;
   });
   function formatDateToDDMMYYHHMM(dateString) {
-  const date = new Date(dateString);
+    const date = new Date(dateString);
 
-  const day = String(date.getDate()).padStart(2, "0");
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const year = String(date.getFullYear()).slice(-2);
-  const hours = String(date.getHours()).padStart(2, "0");
-  const minutes = String(date.getMinutes()).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = String(date.getFullYear()).slice(-2);
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
 
-  return `${hours}:${minutes} ${day}.${month}.${year}`;
-}
+    return `${hours}:${minutes} ${day}.${month}.${year}`;
+  }
+  function downloadFile(uuid) {
+    const fileDownloadUrl = `http://139.84.171.101/api/download/${uuid}`;
+    const anchor = document.createElement("a");
+    anchor.href = fileDownloadUrl;
+    anchor.download = `${uuid}.pdf`;
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+  }
 </script>
 
 {#if loading}
@@ -43,7 +52,9 @@
       <tr class="hover:bg-gray-200 cursor-pointer text-center">
         <td class="px-5 py-3 border border-black">{user._id}</td>
         <td class="px-5 py-3 border border-black">{user.id.name} {user.id.surname} {user.id.fatherName}</td>
-        <td class="px-5 py-3 border border-black">{user.uuid}</td>
+        <td class="px-5 py-3 border border-black">
+          <a href="{`http://139.84.171.101/public/${user.uuid}.pdf`}">{user.uuid}</a>
+        </td>
         <td class="px-5 py-3 border border-black text-center">{formatDateToDDMMYYHHMM(user.date)}</td>
         <td class="px-5 py-3 border border-black">+{user.id.phone_number}</td>
       </tr>
