@@ -22,15 +22,6 @@
 
     return `${hours}:${minutes} ${day}.${month}.${year}`;
   }
-  function downloadFile(uuid) {
-    const fileDownloadUrl = `http://139.84.171.101/api/download/${uuid}`;
-    const anchor = document.createElement("a");
-    anchor.href = fileDownloadUrl;
-    anchor.download = `${uuid}.pdf`;
-    document.body.appendChild(anchor);
-    anchor.click();
-    document.body.removeChild(anchor);
-  }
 </script>
 
 {#if loading}

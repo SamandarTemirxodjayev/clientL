@@ -18,7 +18,8 @@
   const handleSubmit = (async(e) => {
     e.preventDefault();
     loading = true;
-    await axios.put("http://139.84.171.101/api/users", {
+    try {
+      await axios.put("http://139.84.171.101/api/users", {
       name: name,
       surname: surname,
       fatherName: fatherName,
@@ -28,6 +29,11 @@
       phone_number: phone_number,
     });
     window.location.href ="/home/users";
+    } catch (error) {
+      alert(error.message);
+    }
+    loading = false;
+
   });
 </script>
 

@@ -2,7 +2,7 @@
   import axios from "axios";
 	import { onMount } from "svelte";
 	import Loader from "../../../../components/Loader.svelte";
-  import { page } from '$app/stores'
+	import { page } from "$app/stores";
 
   let users = {};
   let loading = true;
@@ -23,15 +23,6 @@
 
     return `${hours}:${minutes} ${day}.${month}.${year}`;
   }
-  function downloadFile(uuid) {
-    const fileDownloadUrl = `http://139.84.171.101/api/download/${uuid}`;
-    const anchor = document.createElement("a");
-    anchor.href = fileDownloadUrl;
-    anchor.download = `${uuid}.pdf`;
-    document.body.appendChild(anchor);
-    anchor.click();
-    document.body.removeChild(anchor);
-  }
 </script>
 
 {#if loading}
@@ -51,10 +42,14 @@
     <tbody>
       {#each users.reverse() as user}
       <tr class="hover:bg-gray-200 cursor-pointer text-center">
-        <td class="px-5 py-3 border border-black">{user._id}</td>
+        <td class="px-5 py-3 border border-black">{user.uuid}</td>
         <td class="px-5 py-3 border border-black">{user.id.name} {user.id.surname} {user.id.fatherName}</td>
         <td class="px-5 py-3 border border-black">
-          <a href="{`http://139.84.171.101/public/${user.uuid}.pdf`}">{user.uuid}</a>
+          <a href="{`http://139.84.171.101/public/${user.uuid}.pdf`}">
+            <button class="p-1 rounded-full from-rose-400 via-fuchsia-500 to-indigo-500 bg-gradient-to-r">
+              <span class="block text-black px-4 py-2 font-semibold rounded-full bg-white hover:bg-transparent hover:text-white transition">Yuklab Olish</span>
+            </button>
+          </a>
         </td>
         <td class="px-5 py-3 border border-black text-center">{formatDateToDDMMYYHHMM(user.date)}</td>
         <td class="px-5 py-3 border border-black">+{user.id.phone_number}</td>
