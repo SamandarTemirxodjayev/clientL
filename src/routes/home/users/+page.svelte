@@ -25,9 +25,7 @@
     <thead>
       <tr>
         <th class="px-5 py-3 border border-black">F.I.SH</th>
-        <th class="px-5 py-3 border border-black">Pasport ID</th>
-        <th class="px-5 py-3 border border-black">Tug'ilgan Sana Oy Yil</th>
-        <th class="px-5 py-3 border border-black">Jinsi</th>
+        <th class="px-5 py-3 border border-black">ID</th>
         <th class="px-5 py-3 border border-black">Telefon Raqami</th>
         <th class="px-5 py-3 border border-black">Detallar</th>
       </tr>
@@ -35,10 +33,8 @@
     <tbody>
       {#each users.reverse() as user}
       <tr class="hover:bg-gray-200 cursor-pointer text-center">
-        <td class="px-5 py-3 border border-black">{user.name} {user.surname} {user.fatherName}</td>
+        <td class="px-5 py-3 border border-black">{user.name} {user.surname}</td>
         <td class="px-5 py-3 border border-black">{user.id_card}</td>
-        <td class="px-5 py-3 border border-black text-center">{user.birth_date}</td>
-        <td class="px-5 py-3 border border-black">{user.gender == "Male" ? `Erkak` : `Ayol`}</td>
         <td class="px-5 py-3 border border-black">+{user.phone_number}</td>
         <td class="py-1 border border-black">
           <a href="{`/home/users/${user._id}`}">

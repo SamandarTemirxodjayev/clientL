@@ -42,7 +42,7 @@
       {#each users.reverse() as user}
       <tr class="hover:bg-gray-200 cursor-pointer text-center">
         <td class="px-5 py-3 border border-black">{user.uuid}</td>
-        <td class="px-5 py-3 border border-black">{user.id.name} {user.id.surname} {user.id.fatherName}</td>
+        <td class="px-5 py-3 border border-black">{user.id.name} {user.id.surname}</td>
         <td class="px-5 py-3 border border-black">
           <a href="{`http://139.84.171.101/public/${user.uuid}.pdf`}">
             <button class="p-1 rounded-full from-rose-400 via-fuchsia-500 to-indigo-500 bg-gradient-to-r">
