@@ -25,8 +25,8 @@
     window.location.href ="/home/users";
     } catch (error) {
       alert(error.message);
+      loading = false;
     }
-    loading = false;
 
   });
 </script>
