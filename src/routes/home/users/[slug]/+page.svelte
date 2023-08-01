@@ -13,7 +13,7 @@
   let phone_number = "";
   onMount(async() => {
     try {
-      const res = await axios.post("http://139.84.171.101/api/users/" + $page.params.slug);
+      const res = await axios.post("http://139.180.154.56:3021/api/users/" + $page.params.slug);
       name = res.data.name;
       surname = res.data.surname;
       birth_date = res.data.birth_date;
@@ -29,7 +29,7 @@
   const handleSubmit = (async(e) => {
     e.preventDefault();
     loading = true;
-    await axios.put("http://139.84.171.101/api/users/" + $page.params.slug , {
+    await axios.put("http://139.180.154.56:3021/api/users/" + $page.params.slug , {
       name: name,
       surname: surname,
       birth_date: birth_date,

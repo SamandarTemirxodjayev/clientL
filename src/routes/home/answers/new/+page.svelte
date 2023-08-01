@@ -12,7 +12,7 @@
 
   onMount(async () => {
     try {
-      const res = await axios.get("http://139.84.171.101/api/users");
+      const res = await axios.get("http://139.180.154.56:3021/api/users");
       users = res.data;
       loading = false;
     } catch (error) {
@@ -37,7 +37,7 @@
       formData.append("id", id);
 
       try {
-        const res = await axios.put("http://139.84.171.101/api/answers", formData);
+        const res = await axios.put("http://139.180.154.56:3021/api/answers", formData);
         id = "";
         alert("Muvaffiqatli saqlandi");
       } catch (error) {
