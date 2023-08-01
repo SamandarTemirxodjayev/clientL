@@ -6,9 +6,6 @@
   let loading = true;
   let name = "";
   let surname = "";
-  let fatherName = "";
-  let birth_date = "";
-  let gender = "Male";
   let id_card = "";
   let phone_number = "";
   onMount(() => {
@@ -48,12 +45,12 @@
       <input bind:value={surname} type="text" id="lastname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 outline-blue-500" required>
     </div>
     <div class="mb-4">
-      <label for="fathername" class="block mb-2 text-sm font-medium text-gray-90">ID raqami</label>
-      <input bind:value={id_card} type="text" id="fathername" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 outline-blue-500" placeholder="AB1231212" required>
+      <label for="id" class="block mb-2 text-sm font-medium text-gray-90">ID raqami</label>
+      <input bind:value={id_card} type="text" id="id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 outline-blue-500" placeholder="AB1231212" required>
     </div>
     <div class="mb-4">
-      <label for="fathername" class="block mb-2 text-sm font-medium text-gray-90">Telefon Raqami (+ belgisiz)</label>
-      <input bind:value={phone_number} type="text" id="fathername" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 outline-blue-500" placeholder="998901234567" required>
+      <label for="phone" class="block mb-2 text-sm font-medium text-gray-90">Telefon Raqami (+ belgisiz)</label>
+      <input bind:value={phone_number} type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 outline-blue-500" placeholder="998901234567" required>
     </div>
     <input type="submit" value="Submit" class="text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm min-w-full sm:w-auto px-5 py-2.5 text-center" />
   </form>

@@ -58,7 +58,7 @@
         <input bind:value={id} type="text" id="browser" list="users" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 outline-blue-500" required />
         <datalist id="users">
           {#each users as user}
-            <option value="{user._id}">{user.name} {user.surname} {user.fatherName}</option>
+            <option value="{user._id}">{user.name} {user.surname}</option>
           {/each}
         </datalist>
       </div>
