@@ -16,7 +16,7 @@
     e.preventDefault();
     loading = true;
     try {
-      await axios.put("http://139.180.154.56:3021/api/users", {
+      await axios.put("http://139.180.154.56/api/users", {
       name: name,
       surname: surname,
       id_card: id_card,

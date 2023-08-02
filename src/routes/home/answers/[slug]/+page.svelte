@@ -8,7 +8,7 @@
   let loading = true;
   
   onMount(async () => {
-    const res = await axios.post("http://139.180.154.56:3021/api/answers/" + $page.params.slug);
+    const res = await axios.post("http://139.180.154.56/api/answers/" + $page.params.slug);
     users = res.data
     loading = false;
   });
@@ -45,7 +45,7 @@
         <td class="px-5 py-3 border border-black">{user.uuid}</td>
         <td class="px-5 py-3 border border-black">{user.id.name} {user.id.surname}</td>
         <td class="px-5 py-3 border border-black">
-          <a href="{`http://139.180.154.56:3021/public/${user.uuid}.pdf`}">
+          <a href="{`http://139.180.154.56/public/${user.uuid}.pdf`}">
             <button class="p-1 rounded-full from-rose-400 via-fuchsia-500 to-indigo-500 bg-gradient-to-r">
               <span class="block text-black px-4 py-2 font-semibold rounded-full bg-white hover:bg-transparent hover:text-white transition">Yuklab Olish</span>
             </button>

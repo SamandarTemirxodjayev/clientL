@@ -6,7 +6,7 @@
   let users = {};
   let loading = true;
   onMount(async () => {
-    const res = await axios.get("http://139.180.154.56:3021/api/users");
+    const res = await axios.get("http://139.180.154.56/api/users");
     users = res.data;
     loading = false;
   });
